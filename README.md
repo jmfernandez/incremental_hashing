@@ -3,7 +3,7 @@ About incremental hashing
 
 Exploring local files hash computation through javascript.
 
-It uses [https://code.google.com/archive/p/crypto-js/](CryptoJS) , and the example is inspired on one from [https://github.com/satazor/js-spark-md5](SparkMD5) distro.
+It uses [CryptoJS](https://code.google.com/archive/p/crypto-js/) , and the example is inspired on one from [SparkMD5](https://github.com/satazor/js-spark-md5) distro.
 
 Installation
 ------------

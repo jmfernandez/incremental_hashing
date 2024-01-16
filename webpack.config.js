@@ -12,6 +12,7 @@ function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.
 function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }
 
 module.exports = {
+	mode: "none",
 	entry: {
 		path: path.join(PATHS.app, 'code.js')
 	},
@@ -35,7 +36,8 @@ module.exports = {
 		//	title: 'BSC Comorbidities web site',
 		//	filename: path.join(PATHS.dist,'index-test.html')
 		//}),
-		new CopyWebpackPlugin([
+		new CopyWebpackPlugin({
+			patterns: [
 		//		{
 		//			context: PATHS.app,
 		//			from: 'json/*.json',
@@ -44,7 +46,8 @@ module.exports = {
 					context: PATHS.app,
 					from: '*.html',
 				}
-		])
+			]
+		})
 	],
 	module: {
 		rules: [
@@ -52,11 +55,11 @@ module.exports = {
 				enforce: 'pre',
 				test: /\.js$/,
 				include: pathToRegExp(PATHS.app),
-				loader: "jshint-loader"
+				loader: 'webpack-loader-denolint'
 			},
 			{
 				test: /\.css$/,
-				loaders: ['style-loader','css-loader']
+				use: ['style-loader','css-loader']
 			},
 			{
 				test: /\.png$/,

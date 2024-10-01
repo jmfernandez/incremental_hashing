@@ -1,6 +1,6 @@
 {
 	"name": "checksum_compute",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": true,
 	"author": "José María Fernández <jose.m.fernandez@bsc.es>",
 	"engines": {
